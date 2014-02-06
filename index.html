@@ -1,0 +1,17 @@
+---
+layout: default
+description: Quinn Rohlf's coursework for Lewis &amp; Clark College course PSYCH-425 (Human Computer Interaction).
+---
+<p class="intro">This page contains Quinn Rohlf's coursework for Lewis &amp; Clark College course PSYCH-425 (Human Computer Interaction).</p>
+<section class="post-index">
+    <h1>Post Index</h1>
+{% for post in site.posts %}
+    <article>
+      	<h2><a href="{{post.url}}">{{ post.title }}</a></h2>
+        <p>{{ post.summary }}</p>
+        <footer class="post-meta">
+        	<p>{{ post.date | date: "%d %h %Y" }}</p>
+      	</footer>
+    </article>
+{% endfor %}
+</section>
