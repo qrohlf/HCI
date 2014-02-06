@@ -1,5 +1,5 @@
 ---
 title: Computing & Age
 layout: post
-summary: "Placeholder for the assignment 'Search the internet for information regarding computing and the following groups: 1) Senior Citizens (55+), (2) Children (16 and under).' (Due 12 Feb)"
+summary: Placeholder for the assignment due Feb. 12 on computing and age groups >55 years and <16 years.
 ---
