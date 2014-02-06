@@ -2,7 +2,7 @@ name:
 description: "This page contains Quinn Rohlf's coursework for Lewis & Clark course PSYCH-425 (Human Computer Interaction)."
 markdown: rdiscount
 pygments: true
-permalink: /HCI/posts/:title
+permalink: /posts/:title
 exclude: [bourbon, neat, main.scss, README.md, Gemfile, Gemfile.lock]
 rdiscount:
   extensions: [smart]
