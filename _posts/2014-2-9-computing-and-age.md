@@ -23,7 +23,7 @@ This European Commission funded [project](http://www.guide-project.eu) aims to c
 
 ## [Monochrome BBS](http://www.mono.org/index.php)
 <img src="/HCI/images/monochrome-bbs.png" alt="monochrome BBS forums"/>
-Bulletin Board Systems (BBSes) predate the Internet and were most popular from the late 1970s to the late 1990s. Monochrome is one of the oldest BBSes still active.  Many elderly computer users who had a computer before the advent of the Internet probably used BBSes for communication, by [hooking their computers up to telephone modems](http://www.youtube.com/watch?v=AByemfK_qD4). It's interesting to see how even though the surface-level interactions with online discussion communities have changed, the underlying structure and topics of most Internet-based forums are virtually identical to those of their BBs precursors.
+Bulletin Board Systems (BBSes) predate the Internet and were most popular from the late 1970s to the late 1990s. Monochrome is one of the oldest BBSes still active.  Many elderly computer users who had a computer before the advent of the Internet probably used BBSes for communication, by [hooking their computers up to telephone modems](http://www.youtube.com/watch?v=AByemfK_qD4). It's interesting to see how even though the surface-level interactions with online discussion communities have changed, the underlying structure and topics of most Internet-based forums are virtually identical to those of their BBS precursors.
 
 # Youth
 
