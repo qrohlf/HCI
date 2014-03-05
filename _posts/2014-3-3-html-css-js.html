@@ -1,0 +1,120 @@
+---
+title: HTML, CSS, and Javascript (Oh My!)
+layout: post
+summary: Such Internet. Very webpage. Many wow. 
+---
+
+<p>This is an abridged introduction to the three fundamental building blocks that make up every website you see in your web browser. It's designed to give you a basic idea of what goes into building a webpage. I've also included plenty of links to more information on each topic, in case something interests you and you want to learn more.</p>
+
+<p>For the purposes of this article, I'm going to completely skip over the mechanics of the Internet/World Wide Web and how a webpage actually gets to your computer and get straight to what happens after the page finishes loading in your browser. If you're interested in learning more about servers and how the Internet itself works, <a href="http://www.jeffknupp.com/blog/2014/03/03/what-is-a-web-framework/">this article</a> is an excellent not-too-technical summary of everything that's going on that I'm not talking about.</p>
+
+<p>Anyways, let's dive right in...</p>
+
+<h1>Anatomy of a webpage</h1>
+<p>Almost all modern webpages have three core components that control their content, appearance, and functionality.</p>
+
+<p><strong>HTML</strong>, or HyperText Markup Language, defines the <em>content</em> and <em>structure</em> of a webpage. The sentence that you're reading right now was sent to your browser as part of an HTML document. HTML is the one requirement for a webpage - without content and structure, the Web is meaningless.</p>
+
+<p><strong>CSS</strong>, or Cascading Style Sheets, define the <em>appearance</em> of a webpage. The fonts, colors, and layout of webpages are all controlled via CSS.</p>
+
+<p><strong>Javascript</strong> defines the <em>functionality</em> of a webpage. Interactive sites like Facebook, Twitter, or Google all use Javascript to allow their webpages to react to user actions like clicking buttons or entering text.</p>
+
+<p>That's the executive overview. Now, I'll go into a bit more detail.</p>
+
+
+
+<h1>HTML</h1>
+<p>HTML was developed in the early 1990s by Tim Berners-Lee as a way for scientists to collaborate. The HTML language has undergone significant change over the last two decades, but its core functionality remains the same: HTML allows people to share content over the Web in a structured and standardized way.</p>
+
+<p>An HTML document is really just a text file that follows a special <em>syntax</em>, or set of grammatical rules. In HTML files, content is structured using a set of <em>tags</em> that convey information about their contents. Tags are enclosed in angle brackets for identification purposes. For example, surrounding a word with <code>&lt;h1&gt;</code> tags would signify that that word is a top-level heading ('h1' stands for 'heading 1').</p>
+
+<p>Much like a set of parentheses, HTML tags come in pairs. Opening tags look like <code>&lt;tag&gt;</code> and closing tags look like <code>&lt;/tag&gt;</code>. So, if I wanted to make a top-level heading in HTML, the sytnax would look like this:</p>
+
+<pre><code>&lt;h1&gt;heading&lt;/h1&gt;</code></pre>
+
+<p>The cool thing about HTML tags is that you can <em>nest</em> them inside each other. This means that HTML documents have a tree-like structure, where elements that are <em>children</em> of other elements acting like the branches of a tree. HTML tags can also have attributes that further add meaning to that tag. For example, the <code>href</code> (hypertext reference) attribute of an <code>a</code> (link) tag controls where that link goes:</p>
+
+<pre><code>&lt;a href='http://google.com'&gt;a link to google&lt;/a&gt;</code></pre>
+
+<p>There are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">dozens</a> of HTML tags out there, but the most commonly used are probably <code>a</code> (which defines links), <code>div</code> (which defines sections of content), <code>img</code> (which defines images), and <code>p</code> (which defines a paragraph of text).
+
+<h2>TLDR</h2>
+<p><em>HTML</em> defines the content and structure of a webpage using a special set of <em>tags</em> and <em>attributes</em>. To learn more about HTML, check out <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction">this guide</a></p>
+
+
+
+<h1>CSS</h1>
+<p>CSS is where things start to get interesting. Raw HTML documents are typically pretty boring looking; most browsers default to black text on a white background. With CSS, web authors can specify how they want their content to be displayed. CSS comes in the form of <em>rules</em> that look like this:</p>
+
+<pre><code>selector {
+    property: value;
+}</code></pre>
+
+<p>where <code>selector</code> is a reference to the thing you want to add styles to, <code>property</code> is where you specify what you want to change (like font size, color, or width/height), and <code>value</code> is where you specify what you want to change the property to.</p>
+
+<p>For example, everything on this page is inside an element called <code>html</code> and I've assigned it a blue background with the following CSS:</p>
+<pre><style contenteditable='true' spellcheck="false">html {
+    background-color: rgb(225, 242, 255);
+}</style></pre>
+
+<p>You can see how this works for yourself! Click on the code above and change the <code>value</code> to <code>rgb(125, 242, 255);</code>. This will change the background of the page by removing 100 units of red. Feel free to play around - you can always restore the original background color by refreshing the page.</p>
+
+<p>CSS has <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Selectors">selectors</a> for virtually any combination of HTML tags, and a massive number of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">properties</a> that you can style with it.</p>
+
+<h2>TLDR</h2>
+<p><em>CSS</em> defines the appearance and layout of a webpage using <em>selectors</em>, <em>properties</em>, and <em>values</em>. To learn more about CSS, check out <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/What_is_CSS">this guide</a>.</p>
+
+
+
+<h1>Javascript</h1>
+<p>Javascript (often abbreviated as <em>JS</em>) is a way of adding interactive functionality to webpages. Unlike HTML and CSS, which are markup and style languages, Javascript is a full-fledged <em>programming language</em>.</p> 
+
+<p>Basically, JS provides a way to run code at the same time that a webpage is being displayed that interacts with the webpage and can react to user actions like clicks and typing. For example, clicking <a id="clickme" href="#">this link</a> will execute the javascript shown below:</p>
+
+<pre><script contenteditable='true' spellcheck="false" id="userscript">var count = 0;
+document.getElementById('clickme').onclick = function() {
+    count++;
+    alert('You have clicked the link '+count+' times.');
+    return false;
+}
+</script></pre>
+
+<p>I've made it so you can edit this code, too! Feel free to play around. If you break the page, you can always reload it to set everything back to normal.</p>
+
+<h2>TLDR</h2>
+<p><em>Javascript</em> lets programmers add interactive functionality to webpages using a full-fledged programming language. To learn more about Javascript, check out <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/JavaScript_Overview">this guide</a>.</p>
+
+<h1>Putting it all together</h1>
+<p>Together, HTML, CSS, and Javascript provide a rich framework for creating content-filled, interesting, and interactive web pages - like this one! You can actually view the HTML and Javascript source of this page <a href="https://github.com/qrohlf/HCI/blob/gh-pages/_posts/2014-3-3-html-css-js.html">here</a>, and the CSS that's used to style it <a href="https://github.com/qrohlf/qrohlf.github.io/blob/master/css/main.css">here</a>.</p>
+
+<p>WYSIWYG editors like Dreamweaver provide a layer of abstraction that's sometimes a convenient alternative to writing HTML and CSS by hand, but the code they output is still HTML, CSS, and Javascript just like this page. Knowing a little bit about how these technologies work can give you a better understanding of what's going on under the hood when you're writing a webpage, and will let you do things that your WYSIWYG tool may not support.</p>
+
+
+
+<!-- 
+HERE BE DRAGONS 
+If you're in my HCI class and looking at this page as an example, you 
+probably don't want to worry about the code below this comment.
+-->
+<script>
+// this is pretty hideous, but it works
+document.getElementById('userscript').addEventListener('keyup', function() {
+    var element = document.getElementById("script-reeval");
+    if (element) element.parentNode.removeChild(element);
+    var s = document.createElement('script');
+    s.id = "script-reeval";
+    s.innerHTML = document.getElementById('userscript').innerHTML;
+    document.body.appendChild(s);
+});
+</script>
+<style>
+/* Make contenteditable styles show up on the page */
+style[contenteditable], script[contenteditable] {
+    display: block;
+}
+/* Remove funky border styling */
+[contenteditable="true"]:focus{
+    border:none;
+    outline:none;
+}
+</style>
