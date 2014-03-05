@@ -102,23 +102,27 @@ probably don't want to worry about the code below this comment.
 -->
 <script>
 // this is pretty hideous, but it works
-document.getElementById('userscript').addEventListener('keyup', function() {
+function scriptRefresh() {
     var element = document.getElementById("script-reeval");
     if (element) element.parentNode.removeChild(element);
     var s = document.createElement('script');
     s.id = "script-reeval";
     s.innerHTML = document.getElementById('userscript').innerHTML;
     document.body.appendChild(s);
-});
+};
+scriptRefresh(); // call immediately
+document.getElementById('userscript').addEventListener('keyup', scriptRefresh);
 
-document.getElementById('userstyle').addEventListener('keyup', function() {
+function styleRefresh() {
     var element = document.getElementById("style-reeval");
     if (element) element.parentNode.removeChild(element);
     var s = document.createElement('style');
     s.id = "style-reeval";
     s.innerHTML = document.getElementById('userstyle').innerHTML;
     document.body.appendChild(s);
-});
+};
+styleRefresh();
+document.getElementById('userstyle').addEventListener('keyup', styleRefresh);
 
 function nope(e) {
     // trap the return key being pressed
