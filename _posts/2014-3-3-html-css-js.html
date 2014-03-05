@@ -53,9 +53,11 @@ summary: Such Internet. Very webpage. Many wow.
 <p>where <code>selector</code> is a reference to the thing you want to add styles to, <code>property</code> is where you specify what you want to change (like font size, color, or width/height), and <code>value</code> is where you specify what you want to change the property to.</p>
 
 <p>For example, everything on this page is inside an element called <code>html</code> and I've assigned it a blue background with the following CSS:</p>
-<pre><style contenteditable='true' spellcheck="false">html {
+<pre contenteditable='true' spellcheck="false" id="userstyle">html {
     background-color: rgb(225, 242, 255);
-}</style></pre>
+}
+
+</pre>
 
 <p>You can see how this works for yourself! Click on the code above and change the <code>value</code> to <code>rgb(125, 242, 255);</code>. This will change the background of the page by removing 100 units of red. Feel free to play around - you can always restore the original background color by refreshing the page.</p>
 
@@ -71,13 +73,13 @@ summary: Such Internet. Very webpage. Many wow.
 
 <p>Basically, JS provides a way to run code at the same time that a webpage is being displayed that interacts with the webpage and can react to user actions like clicks and typing. For example, clicking <a id="clickme" href="#">this link</a> will execute the javascript shown below:</p>
 
-<pre><script contenteditable='true' spellcheck="false" id="userscript">var count = 0;
+<pre contenteditable='true' spellcheck="false" id="userscript">var count = 0;
 document.getElementById('clickme').onclick = function() {
     count++;
     alert('You have clicked the link '+count+' times.');
     return false;
 }
-</script></pre>
+</pre>
 
 <p>I've made it so you can edit this code, too! Feel free to play around. If you break the page, you can always reload it to set everything back to normal.</p>
 
@@ -108,6 +110,33 @@ document.getElementById('userscript').addEventListener('keyup', function() {
     s.innerHTML = document.getElementById('userscript').innerHTML;
     document.body.appendChild(s);
 });
+
+document.getElementById('userstyle').addEventListener('keyup', function() {
+    var element = document.getElementById("style-reeval");
+    if (element) element.parentNode.removeChild(element);
+    var s = document.createElement('style');
+    s.id = "style-reeval";
+    s.innerHTML = document.getElementById('userstyle').innerHTML;
+    document.body.appendChild(s);
+});
+
+function nope(e) {
+    // trap the return key being pressed
+    if (e.keyCode == 13) {
+        document.execCommand('insertHTML', false, '\r\n'); //\u2060
+        // prevent the default behaviour of return key pressed
+        e.preventDefault();
+        return false;
+    }
+    // trap the tab key
+    if (e.keyCode == 9) {
+        document.execCommand('insertHTML', false, '    ');
+        e.preventDefault();
+        return false;
+    }
+}
+document.getElementById('userstyle').addEventListener('keydown', nope);
+document.getElementById('userscript').addEventListener('keydown', nope);
 </script>
 <style>
 /* Make contenteditable styles show up on the page */
@@ -116,7 +145,7 @@ style[contenteditable], script[contenteditable] {
 }
 /* Remove funky border styling */
 [contenteditable="true"]:focus{
-    border:none;
-    outline:none;
+    outline: none;
+    border-color: #67C9F7;
 }
 </style>
